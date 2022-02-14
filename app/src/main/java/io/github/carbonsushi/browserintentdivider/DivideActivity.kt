@@ -13,6 +13,7 @@ class DivideActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val sendIntent = Intent(Intent.ACTION_VIEW, Uri.parse(intent.dataString))
+            .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         val queryActivities =
             packageManager.queryIntentActivities(sendIntent, PackageManager.MATCH_ALL)
 
@@ -27,7 +28,7 @@ class DivideActivity : AppCompatActivity() {
                     startActivity(
                         sendIntent.setClassName(activityInfo.packageName, activityInfo.name)
                     )
-                    finish()
+                    finishAndRemoveTask()
                     return
                 }
             }
@@ -42,12 +43,12 @@ class DivideActivity : AppCompatActivity() {
                 && !excludePackageList.contains(activityInfo.packageName)
             ) {
                 startActivity(sendIntent.setClassName(activityInfo.packageName, activityInfo.name))
-                finish()
+                finishAndRemoveTask()
                 return
             }
         }
 
         Toast.makeText(this, R.string.error_toast, Toast.LENGTH_LONG).show()
-        finish()
+        finishAndRemoveTask()
     }
 }
