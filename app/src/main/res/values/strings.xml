@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Browser intent divider</string>
+
+    <!-- SettingsActivity -->
+    <string name="exclude_package_list_title">Exclude package list</string>
+    <string name="priority_package_list_title">Priority package list</string>
+    <string name="about_title">About</string>
+    <string name="about_description">Browser intent divider for Android.</string>
+
+    <!-- DivideActivity -->
+    <string name="error_toast">Error: Can\'t start activity.</string>
+</resources>

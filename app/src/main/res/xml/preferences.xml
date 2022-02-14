@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <EditTextPreference
+        android:key="exclude_package_list"
+        android:title="@string/exclude_package_list_title"
+        app:useSimpleSummaryProvider="true" />
+
+    <EditTextPreference
+        android:key="priority_package_list"
+        android:title="@string/priority_package_list_title"
+        app:useSimpleSummaryProvider="true" />
+
+    <Preference
+        android:key="about"
+        android:title="@string/about_title" />
+</PreferenceScreen>
